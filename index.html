@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AIScribe Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial; margin: 0; padding: 0; background: #f6f7fb; }
+    header { padding: 16px 20px; background: linear-gradient(135deg, #4b8bf1, #6a9cf2); color: #fff; display:flex; align-items:center; gap:12px; }
+    h1 { margin: 0; font-size: 18px; }
+    main { padding: 20px; min-width: 560px; }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 10px; }
+    .card h2 { margin: 0; font-size: 16px; color: #333; }
+    .card p { margin: 0; color: #666; font-size: 13px; }
+    .btn { align-self: flex-start; border: none; border-radius: 8px; padding: 8px 14px; background: #4b8bf1; color: #fff; cursor: pointer; white-space: nowrap; min-width: 140px; }
+    .btn:hover { background: #3a76db; }
+    footer { padding: 12px 20px; color: #666; font-size: 12px; }
+    .muted { color: #666; font-size: 12px; }
+    nav { display:flex; gap: 8px; margin-top: 8px; }
+    .logo { width:24px; height:24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.svg" alt="AIScribe Logo" class="logo"/>
+    <h1>AIScribe (Offline Writing & Translation Assistant)</h1>
+    <div style="margin-left:auto;display:flex;gap:8px;align-items:center;">
+      <label for="home-target" class="muted" style="color:#eef;">Default Target</label>
+      <select id="home-target" class="select" style="padding:4px 6px;border-radius:6px;border:none;">
+        <option value="zh">中文 (zh)</option>
+        <option value="en">English (en)</option>
+        <option value="ja">日本語 (ja)</option>
+        <option value="ko">한국어 (ko)</option>
+        <option value="fr">Français (fr)</option>
+        <option value="de">Deutsch (de)</option>
+        <option value="es">Español (es)</option>
+        <option value="ru">Русский (ru)</option>
+        <option value="it">Italiano (it)</option>
+        <option value="pt">Português (pt)</option>
+      </select>
+    </div>
+  </header>
+  <main>
+    <div class="card-grid">
+      <section class="card">
+        <h2>Translation Comparison</h2>
+        <p>Generate an AI reference translation, write your version, and get Score & Suggestions.</p>
+        <button class="btn" id="go-translation">Open Translation Comparison</button>
+      </section>
+      <section class="card">
+        <h2>Writing Assistant</h2>
+        <p>Real-time proofreading and one-click rewriting to improve text quality.</p>
+        <button class="btn" id="go-writing">Open Writing Assistant</button>
+      </section>
+    </div>
+    <p class="muted" style="margin-top:16px;">Tip: Select text on any page, then right-click "Import selected text to AIScribe".</p>
+  </main>
+  <footer>
+    AIScribe © 2025
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>

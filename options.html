@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AIScribe Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial; margin: 24px; }
+    .row { margin-bottom: 14px; }
+    select, input[type=checkbox] { font-size: 14px; }
+    .muted { color:#666; font-size:12px; }
+  </style>
+</head>
+<body>
+  <h2>AIScribe Settings</h2>
+  <div class="row">
+    <label>
+      <input type="checkbox" id="enableToolbar"> Enable Page Text Selection Toolbar
+    </label>
+  </div>
+  <div class="row">
+    <label>
+      Default Target Language:
+      <select id="targetLang">
+        <option value="zh">Chinese (zh)</option>
+        <option value="en">English (en)</option>
+      </select>
+    </label>
+  </div>
+  <p class="muted">Note: All processing is done entirely offline; no data is sent to the network.</p>
+
+  <script src="options.js"></script>
+</body>
+</html>

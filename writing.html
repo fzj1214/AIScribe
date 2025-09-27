@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AIScribe - Writing Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial; margin: 16px; min-width: 560px; }
+    header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+    .btn { border:none; border-radius:8px; padding:8px 14px; background:#4b8bf1; color:#fff; cursor:pointer; white-space:nowrap; min-width: 120px; }
+    .btn:hover { background:#3a76db; }
+    .link { background:#f0f3fb; color:#2f63c8; border:1px solid #dbe5ff; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items:start; }
+    .full { grid-column: 1 / -1; }
+    .area { width:100%; height:200px; box-sizing:border-box; padding:8px; border:1px solid #ddd; border-radius:8px; font-size:13px; resize:vertical; line-height:1.6; }
+    .muted { color:#666; font-size:12px; }
+    label { font-weight:600; color:#333; }
+    .tips { background:#f8fafc; border:1px dashed #c6d3ff; padding:8px 10px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Writing Assistant</strong>
+    <button class="btn link" id="back-home">Back to Home</button>
+  </header>
+
+  <div class="grid">
+    <div class="full tips">Real-time Proofreading and One-click Rewriting.</div>
+
+    <div>
+      <label>Input Text</label>
+      <textarea id="writing-input" class="area" placeholder="Enter or paste the text to check and rewrite here"></textarea>
+      <div style="margin-top:8px; display:flex; gap:8px; align-items:center;">
+        <button class="btn" id="btn-proofread">Proofread</button>
+        <button class="btn" id="btn-rewrite">Rewrite</button>
+        <span class="muted" id="status-writing"></span>
+      </div>
+    </div>
+
+    <div>
+      <label>Proofreading Result / Rewrite Suggestions</label>
+      <textarea id="writing-output" class="area" placeholder="Results will be displayed here" readonly></textarea>
+    </div>
+
+    <p class="muted full">Tip: The proofreading feature will prioritize the on-device API (if available), and fallback to the local engine's lightweight implementation if it fails.</p>
+  </div>
+
+  <script src="writing.js"></script>
+</body>
+</html>

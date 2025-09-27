@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AIScribe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Arial; margin: 16px; min-width: 560px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items:start; }
+    .full { grid-column: 1 / -1; }
+    .row { display:flex; align-items:center; gap:12px; }
+    .btn { border:none; border-radius:8px; padding:8px 14px; background:#4b8bf1; color:#fff; cursor:pointer; white-space:nowrap; min-width: 140px; }
+    .btn:hover { background:#3a76db; }
+    .muted { color:#666; font-size:12px; }
+    .area { width:100%; height:120px; box-sizing:border-box; padding:8px; border:1px solid #ddd; border-radius:8px; font-size:13px; resize:vertical; }
+    label { font-weight:600; color:#333; }
+  </style>
+</head>
+<body>
+  <header style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+    <strong>Translation Comparison</strong>
+    <button class="btn" style="background:#f0f3fb; color:#2f63c8; border:1px solid #dbe5ff;" id="back-home">Back to Home</button>
+  </header>
+  <div class="grid">
+    <div class="row full">
+      <label><input type="checkbox" id="toggle"> Enable Page Text Selection Toolbar</label>
+    </div>
+
+    <div class="row">
+      <button class="btn" id="btn-import">Import from Page Selection</button>
+    </div>
+    <div></div>
+
+    <div>
+      <label>Original Text</label>
+      <textarea id="area-original" class="area" placeholder="Paste or import original text here"></textarea>
+      <div class="row">
+        <button class="btn" id="btn-translate-gen">Generate AI Translation</button>
+        <span class="muted" id="status-translate"></span>
+      </div>
+    </div>
+
+    <div>
+      <label>AI Translation</label>
+      <textarea id="area-machine" class="area" placeholder="Will be filled after clicking 'Generate AI Translation'"></textarea>
+      <label>Your Translation</label>
+      <textarea id="area-user" class="area" placeholder="Enter your translation version here"></textarea>
+      <div class="row">
+        <label for="select-target" class="muted" style="margin-right:8px;">Target Language</label>
+        <select id="select-target" class="select">
+          <option value="zh">中文 (zh)</option>
+          <option value="en">English (en)</option>
+          <option value="ja">日本語 (ja)</option>
+          <option value="ko">한국어 (ko)</option>
+          <option value="fr">Français (fr)</option>
+          <option value="de">Deutsch (de)</option>
+          <option value="es">Español (es)</option>
+          <option value="ru">Русский (ru)</option>
+          <option value="it">Italiano (it)</option>
+          <option value="pt">Português (pt)</option>
+        </select>
+      </div>
+      <div class="row">
+        <button class="btn" id="btn-evaluate">Score & Give Suggestions</button>
+        <span class="muted" id="status-eval"></span>
+      </div>
+    </div>
+
+    <div class="full">
+      <label>Score & Suggestions</label>
+      <textarea id="area-result" class="area" placeholder="Evaluation results will be displayed here" readonly></textarea>
+    </div>
+
+    <p class="muted full">Tip: You can also select text on a page and right-click "Import selected text to AIScribe".</p>
+  </div>
+
+  <script src="translation.js"></script>
+</body>
+</html>
